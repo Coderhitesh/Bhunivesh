@@ -29,7 +29,7 @@ const AddCity = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:8000/api/v1/create_location', { name });
+            const response = await axios.post('https://www.api.test.propsavvyrealtors.com/api/v1/create_location', { name });
             toast.success(response.data.message || 'City added successfully!');
             setFormData({ name: '' }); // Reset the form
         } catch (error) {

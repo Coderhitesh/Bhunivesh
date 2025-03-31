@@ -21,7 +21,7 @@ const SingleBlog = ({ slug }) => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:8000/api/v1/get_blog_by_slug/${slug}`);
+        const { data } = await axios.get(`https://www.api.test.propsavvyrealtors.com/api/v1/get_blog_by_slug/${slug}`);
         setBlog(data.data);
         setLoading(false);
       } catch (error) {

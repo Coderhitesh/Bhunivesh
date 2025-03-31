@@ -42,7 +42,7 @@ function EditBlogs() {
 
     const handleFetchBlog = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/api/v1/get_blog/${id}`);
+            const { data } = await axios.get(`https://www.api.test.propsavvyrealtors.com/api/v1/get_blog/${id}`);
             const allData = data.data;
             setFormData({
                 title: allData.title,
@@ -89,7 +89,7 @@ function EditBlogs() {
 
         setLoading(true);
         try {
-            const res = await axios.put(`http://localhost:8000/api/v1/update_blog/${id}`, payload, {
+            const res = await axios.put(`https://www.api.test.propsavvyrealtors.com/api/v1/update_blog/${id}`, payload, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             toast.success(res.data.message);

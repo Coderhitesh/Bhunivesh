@@ -22,7 +22,7 @@ function AllBlogs() {
     const handleFetchBanner = async () => {
         setLoading(true);
         try {
-            const { data } = await axios.get('http://localhost:8000/api/v1/get_blogs');
+            const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_blogs');
             setBanners(data.data || []); // Ensure default empty array
         } catch (error) {
             console.error('Error fetching blogs:', error);
@@ -35,7 +35,7 @@ function AllBlogs() {
     const handleDeleteBanner = async (id) => {
         setLoading(true);
         try {
-            await axios.delete(`http://localhost:8000/api/v1/delete-blog/${id}`);
+            await axios.delete(`https://www.api.test.propsavvyrealtors.com/api/v1/delete-blog/${id}`);
             setBanners((prevBanners) => prevBanners.filter((banner) => banner._id !== id));
             toast.success('Blog deleted successfully!');
         } catch (error) {

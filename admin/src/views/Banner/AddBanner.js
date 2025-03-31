@@ -39,7 +39,7 @@ function AddHero() {
 
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:8000/api/v1/create_hero', payload, {
+            const res = await axios.post('https://www.api.test.propsavvyrealtors.com/api/v1/create_hero', payload, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             toast.success('Hero added successfully!');
