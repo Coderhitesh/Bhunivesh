@@ -1,24 +1,67 @@
+'use client'
 import { LayoutOne } from "@/layouts";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import Slider from "react-slick";
+import axios from 'axios';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { getProducts, productSlug } from "@/lib/product";
 import TitleSection from "@/components/titleSection";
 import ShopBreadCrumb from "@/components/breadCrumbs/shop";
 import TestimonialCarouselItem from "@/components/testimonialCarousel";
 import testimonialData from "@/data/testimonial";
-import BlogItem from "@/components/blog";
-import blogData from "@/data/blog";
 import CallToAction from "@/components/callToAction";
 import AboutUsStyleOne from "@/components/aboutUs/aboutUsStyleOne";
 import Feature from "@/components/features";
 import featureData from "@/data/service"
-import TeamItem from "@/components/team";
-import TeamData from '@/data/team';
+import { useEffect, useState } from "react";
 
 function AboutUs() {
-  const agents = getProducts(TeamData, "buying", "featured", 3);
+  // const agents = getProducts(TeamData, "buying", "featured", 3);
   const featureDataSorted = getProducts(featureData, "buying", "featured", 3);
+
+  const [agents, setAgents] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_teams');
+        const uniqueAgents = Array.from(new Map(data.data.map(item => [item._id, item])).values());
+        console.log("uniqueAgents",uniqueAgents)
+        setAgents(uniqueAgents.reverse());
+      } catch (error) {
+        console.log('Internal server error', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const settings = {
+    dots: false,
+    infinite: agents.length > 4, // Only infinite scroll if you have more than 4 agents
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 576,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+  
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
@@ -95,33 +138,33 @@ function AboutUs() {
 
 
 
-        <div className="ltn__team-area pt-115 pb-90">
+        <div className="py-5 bg-light">
           <Container>
-            <Row>
-              <Col lg={12}>
-                <TitleSection
-                  sectionClasses="text-center"
-                  headingClasses="section-subtitle-2"
-                  titleSectionData={{
-                    subTitle: "Team",
-                    title: "Owners",
-                  }}
-                />
+            <Row className="mb-4">
+              <Col>
+                <h3 className="text-center">Meet Our Owners</h3>
               </Col>
             </Row>
 
-            <Row>
-              {agents.map((data, key) => {
-                const slug = productSlug(data.name);
-                return (
-                  <Col key={key} xs={12} sm={6} lg={4} >
-                    <TeamItem baseUrl="blog" data={data} slug={slug} additionalClassname="" />
-                  </Col>
-                );
-              })}
-            </Row>
-
-
+            {/* Don't wrap Slider inside <Row> */}
+            <Slider {...settings}>
+              {agents.map((agent) => (
+                <div key={agent._id} className="p-2">
+                  <div className="card border-0 shadow-sm">
+                    <img
+                      src={agent.image?.url}
+                      alt={agent.name}
+                      className="card-img-top"
+                      style={{ height: '200px', objectFit: 'cover' }}
+                    />
+                    <div className="card-body text-center">
+                      <h5 className="card-title">{agent.name}</h5>
+                      <p className="card-text text-muted">{agent.position}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </Container>
         </div>
 

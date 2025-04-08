@@ -16,6 +16,10 @@ import EditProperty from './views/Property/EditProperty'
 import AllProperty from './views/Property/AllProperty'
 import AllPropertyInquiry from './views/PropertyInquery/AllPropertyInquery'
 import AllInquiry from './views/Inquiry/AllInquiry'
+import AllTeam from './views/Team/AllTeam'
+import AddTeam from './views/Team/AddTeam'
+import AllCompanyImage from './views/CompanyImage/AllCompanyImage'
+import AddCompanyImage from './views/CompanyImage/AddCompanyImage'
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
@@ -167,6 +171,16 @@ const routes = [
   // property inquiry routes here 
   { path: '/inquiry', name: 'Inquiry', element: Cards, exact: true },
   { path: '/inquiry/all_inquiry', name: 'All Inquiry', element: AllInquiry },
+
+  // property company image routes here 
+  { path: '/company_image', name: 'Company Image', element: Cards, exact: true },
+  { path: '/company_image/all_company_image', name: 'All Company Image', element: AllCompanyImage },
+  { path: '/company_image/add_company_image', name: 'Add Company Image', element: AddCompanyImage },
+
+  // property team routes here 
+  { path: '/team', name: 'Team', element: Cards, exact: true },
+  { path: '/team/all_team', name: 'All Team', element: AllTeam },
+  { path: '/team/add_team', name: 'Add Team', element: AddTeam },
 
 ]
 

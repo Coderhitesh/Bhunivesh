@@ -18,6 +18,7 @@ export async function generateMetadata({ params }) {
     }
 
     const property = response.data.data;
+    // console.log("property",property)
 
     return {
       title: property?.MetaTitle || "Property Details",

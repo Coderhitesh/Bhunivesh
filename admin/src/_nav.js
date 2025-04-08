@@ -60,6 +60,18 @@ const _nav = [
     to: '/inquiry/all_inquiry',
     icon: <CIcon icon={cilText} customClassName="nav-icon" />,
   },
+  {
+    component: CNavItem,
+    name: 'All Company Image',
+    to: '/company_image/all_company_image',
+    icon: <CIcon icon={cilText} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'All Team',
+    to: '/team/all_team',
+    icon: <CIcon icon={cilText} customClassName="nav-icon" />,
+  },
 ]
 
 export default _nav

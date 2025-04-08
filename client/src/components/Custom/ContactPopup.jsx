@@ -3,8 +3,7 @@ import axios from 'axios';
 import { X, Send, User, Mail, Phone, MessageSquare } from 'lucide-react';
 import { toast, Toaster } from 'react-hot-toast';
 
-const ContactPopup = () => {
-  const [showPopup, setShowPopup] = useState(false);
+const ContactPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,13 +11,7 @@ const ContactPopup = () => {
     message: ''
   });
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 3000); // Show popup after 3 seconds
 
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,20 +33,20 @@ const ContactPopup = () => {
     });
   };
 
-  if (!showPopup) return null;
+  if (!isOpen) return null;
 
   return (
     <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-        <Toaster position="top-right" />
-      <div className="modal-dialog modal-dialog-centered">
+      <Toaster position="top-right" />
+      <div style={{marginTop:'0px'}} className="modal-dialog modal-dialog-centered">
         <div className="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
           {/* Header */}
-          <div style={{backgroundColor:'#679E3E'}} className="modal-header text-white border-0 px-4 py-3">
-            <h5 style={{color:'white'}} className="modal-title fw-bold">Contact Us</h5>
+          <div style={{ backgroundColor: '#679E3E' }} className="modal-header text-white border-0 px-4 py-3">
+            <h5 style={{ color: 'white' }} className="modal-title fw-bold">Contact Us</h5>
             <button
               type="button"
               className="btn-close btn-close-white"
-              onClick={() => setShowPopup(false)}
+              onClick={onClose}
               aria-label="Close"
             ></button>
           </div>

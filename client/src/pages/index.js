@@ -5,17 +5,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import path from "path";
 import fs from "fs/promises";
 import { LayoutTwo } from "@/layouts";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { getProducts, productSlug } from "@/lib/product";
 import TitleSection from "@/components/titleSection";
 import Feature from "@/components/features";
 import featuresData from "@/data/service";
 import HeroSectionStyleThree from "@/components/hero/styleThree";
-import { useSelector } from "react-redux";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ModalVideo from "react-modal-video";
-import blogData from "@/data/blog";
-import BlogItem from "@/components/blog";
 import CallToAction from "@/components/callToAction";
 import VideoBanner from "@/components/banner/videoBanner";
 import CarDealerSearchForm from "@/components/carDealerSearchForm";
@@ -25,7 +21,7 @@ import axios from "axios";
 import { ArrowRight, Calendar, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import ContactPopup from "@/components/Custom/ContactPopup";
-// import './globel.css'
+import Head from "next/head";
 
 function HomePage(props) {
   const [isOpen, setOpen] = useState(false);
@@ -228,18 +224,34 @@ function HomePage(props) {
     );
   };
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 3000); // Show popup after 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleOpenPopUp = () => setShowPopup(true);
+  const handleClosePopUp = () => setShowPopup(false);
+
   return (
     <>
+     <Head>
+        <link rel="icon" href="/logo.png" type="image/x-icon" />
+      </Head>
       <LayoutTwo topbar={true}>
-      <ContactPopup />
+        <ContactPopup isOpen={showPopup} onClose={handleClosePopUp} />
 
-        <ModalVideo
+        {/* <ModalVideo
           channel="youtube"
           autoplay
           isOpen={isOpen}
           videoId="_yhE9Wo-OtQ"
           onClose={() => setOpen(false)}
-        />
+        /> */}
         {/* <!-- SLIDER AREA START (slider-11) --> */}
         <div className="ltn__slider-area ltn__slider-3 section-bg-2">
           <HeroSectionStyleThree data={data} />
@@ -474,6 +486,22 @@ function HomePage(props) {
           </Container>
         </div>
         {/* <!-- CALL TO ACTION END --> */}
+
+        <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 1050 }}>
+          <button
+            className="btn btn-primary shadow-lg rounded-pill px-4 py-2 d-flex align-items-center gap-2"
+            style={{
+              fontWeight: 500,
+              fontSize: '16px',
+              backgroundColor: '#C4D65A',
+              border: 'none',
+            }}
+            onClick={handleOpenPopUp}
+          >
+            <i className="bi bi-chat-dots-fill"></i> Inquiry
+          </button>
+        </div>
+
       </LayoutTwo>
     </>
   );

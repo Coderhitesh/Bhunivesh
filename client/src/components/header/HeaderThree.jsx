@@ -76,7 +76,7 @@ const HeaderStyleThree = function ({ SetToggleClassName, topbar }) {
                 <div className="site-logo-wrap">
                   <div className="site-logo">
                     <Link href="/">
-                      <Image src="/logo.png" alt="Logo" width={100} height={100} />
+                      <Image src="/logo.png" alt="Logo" width={100} height={70} />
                       {/* <h1>LOGO</h1> */}
                     </Link>
                   </div>

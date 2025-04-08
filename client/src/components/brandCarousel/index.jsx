@@ -1,87 +1,77 @@
-import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+'use client';
+import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
+import axios from 'axios';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-function BrandCarouselOne({ data }) {
-  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-    <button
-      {...props}
-      className={
-        "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "")
-      }
-      aria-hidden="true"
-      aria-disabled={currentSlide === 0 ? true : false}
-      type="button"
-    >
-      <FaArrowLeft />
-    </button>
-  );
-  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <button
-      {...props}
-      className={
-        "slick-next slick-arrow" +
-        (currentSlide === slideCount - 1 ? " slick-disabled" : "")
-      }
-      aria-hidden="true"
-      aria-disabled={currentSlide === slideCount - 1 ? true : false}
-      type="button"
-    >
-      <FaArrowRight />
-    </button>
-  );
+const BrandCarouselOne = () => {
+  const [brands, setBrands] = useState([]);
 
-  const brandSettings = {
-    rtl: false,
-    arrows: false,
+  useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const res = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_all_company_images');
+        setBrands(res.data.data.reverse());
+      } catch (error) {
+        console.error('Failed to fetch images:', error);
+      }
+    };
+
+    fetchBrands();
+  }, []);
+
+  const settings = {
     dots: false,
     infinite: true,
-    speed: 300,
-    slidesToShow: 5,
+    speed: 500,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    prevArrow: <SlickArrowLeft />,
-    nextArrow: <SlickArrowRight />,
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: false,
+          slidesToShow: 2,
         },
       },
       {
-        breakpoint: 580,
+        breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 1,
         },
       },
     ],
   };
 
   return (
-    <>
-      <Slider
-        {...brandSettings}
-        className="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1"
-      >
-        {data.map((item, key) => {
-          return (
-            <div key={key} className="ltn__brand-logo-item">
-              <img src={`/img/brand-logo/${item.image}`} alt="Brand Logo" />
+    <div className="container py-4">
+      <Slider {...settings}>
+        {brands.map((brand) => (
+          <div key={brand._id} className="p-2">
+            <div
+              className="bg-white rounded shadow-sm d-flex align-items-center justify-content-center"
+              style={{ aspectRatio: '4/3' }}
+            >
+              <img
+                src={brand.image?.url}
+                alt="Brand"
+                className="img-fluid"
+                style={{ maxHeight: '100%', objectFit: 'contain' }}
+              />
             </div>
-          );
-        })}
+          </div>
+        ))}
       </Slider>
-    </>
+    </div>
   );
-}
+};
 
 export default BrandCarouselOne;

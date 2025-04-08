@@ -122,11 +122,11 @@ const HeaderStyleTwo = function ({ SetToggleClassName, topbar }) {
 
       {/* <!-- Utilize Cart Menu Start --> */}
 
-      <HeaderCartMenu
+      {/* <HeaderCartMenu
         cartMenu={cartMenu}
         cartMenuOpener={cartMenuOpener}
         closeSideBar={closeSideBar}
-      />
+      /> */}
 
       {/* <!-- Utilize Cart Menu End --> */}
 

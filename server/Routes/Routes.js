@@ -8,6 +8,8 @@ const { createProperty, findAllProperties, findPropertyBySlug, findOneProperty, 
 const { createInquery, findAllInquerys } = require('../controllers/inquery.controller');
 const { getAllBlog, getSingleBlog, deleteBlog, updateBlog, createBlog, getBlogBySlug } = require('../controllers/blog.controller');
 const { createPropertyInquery, findAllPropertyInquirys, deletePropertyInquiry } = require('../controllers/propertyInquery.controller');
+const { createCompanyImage, getAllCompanyImages, getSingleCompanyImage, deleteCompanyImage, updateCompanyImage } = require('../controllers/companyImage.controller');
+const { createTeam, getAllTeams, getSingleTeam, updateTeam, deleteTeam } = require('../controllers/team.controller');
 
 // Create a new location
 router.post('/create_location', createLocation);
@@ -56,5 +58,22 @@ router.get('/get_blog_by_slug/:slug', getBlogBySlug);
 router.post('/create_property_inquery',createPropertyInquery)
 router.get('/get_property_inquery',findAllPropertyInquirys)
 router.delete('/delete_property_inquery/:id',deletePropertyInquiry)
+
+
+// company images route here 
+
+router.post('/create_company_image',upload.single('image'),createCompanyImage)
+router.put('/update_company_image/:id',upload.single('image'),updateCompanyImage)
+router.get('/get_all_company_images',getAllCompanyImages)
+router.get('/get_single_company_images/:id',getSingleCompanyImage)
+router.delete('/delete_company_image/:id',deleteCompanyImage)
+
+// team router here 
+router.post('/create_team',upload.single('image'),createTeam)
+router.get('/get_teams',getAllTeams)
+router.get('/get_team/:id',getSingleTeam)
+router.put('/update_team/:id',upload.single('image'),updateTeam)
+router.delete('/delete_team/:id',deleteTeam)
+
 
 module.exports = router;
