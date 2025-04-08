@@ -140,34 +140,34 @@ const SingleProperty = ({ slug }) => {
                 <div className="card-body p-4">
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <h2 className="h3 mb-0">Property Details</h2>
-                    <div className="d-flex gap-2">
+                    {/* <div className="d-flex gap-2">
                       <button className="btn btn-outline-primary rounded-circle p-2">
                         <Heart size={20} />
                       </button>
                       <button className="btn btn-outline-primary rounded-circle p-2">
                         <Share2 size={20} />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="row g-4 mb-4">
                     <div className="col-md-4">
                       <div className="feature-card text-center p-3 border rounded-3">
-                        <Home size={24} className="mb-2 text-primary" />
+                        <Home size={24} style={{color:'#6A9D38'}} className="mb-2" />
                         <h5 className="mb-1">{property?.propertyType?.name}</h5>
                         <p className="text-muted small mb-0">Property Type</p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <div className="feature-card text-center p-3 border rounded-3">
-                        <CheckCircle size={24} className="mb-2 text-primary" />
+                        <CheckCircle size={24} className="mb-2" style={{color:'#6A9D38'}} />
                         <h5 className="mb-1">{property.status}</h5>
                         <p className="text-muted small mb-0">Status</p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <div className="feature-card text-center p-3 border rounded-3">
-                        <MapPin size={24} className="mb-2 text-primary" />
+                        <MapPin size={24} className="mb-2" style={{color:'#6A9D38'}} />
                         <h5 className="mb-1">{property?.location?.name}</h5>
                         <p className="text-muted small mb-0">Location</p>
                       </div>
@@ -265,7 +265,8 @@ const SingleProperty = ({ slug }) => {
                     </div>
                     <button
                       type="submit"
-                      className="btn btn-primary w-100 py-3 rounded-3 d-flex align-items-center justify-content-center gap-2"
+                      className="btn w-100 py-3 rounded-3 d-flex align-items-center justify-content-center gap-2"
+                      style={{background:'#6A9D38',color:'white'}}
                     >
                       Schedule Visit
                       <ArrowRight size={18} />

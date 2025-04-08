@@ -31,7 +31,7 @@ function Feature({ classes, headingClasses }) {
   ];
 
   return (
-    <div className={`ltn__feature-area pt-115 pb-90 ${classes}`}>
+    <div className={`ltn__feature-area pt-50 pb-90 ${classes}`}>
       <Container>
         <Row>
           <Col xs={12}>

@@ -38,7 +38,7 @@ const Footer = function () {
                     </div>
                   </div>
                   <p>
-                  At Bhunivesh, we help you find your dream property with ease..
+                    At Bhunivesh, we help you find your dream property with ease..
                   </p>
                   <div className="footer-address">
                     <ul>
@@ -111,18 +111,6 @@ const Footer = function () {
                       <li>
                         <Link href="/blog/grid">Blog</Link>
                       </li>
-                      {/* <li>
-                        <Link href="/shop">All Products</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/locations">Locations Map</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/faq">FAQ</Link>
-                      </li>
-                      <li>
-                        <Link href="/contact">Contact us</Link>
-                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -132,18 +120,6 @@ const Footer = function () {
                   <h4 className="footer-title">Services</h4>
                   <div className="footer-menu">
                     <ul>
-                      {/* <li>
-                        <Link href="/order-tracking">Order tracking</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/wishlist">Wish List</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/login">Login</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/my-account">My account</Link>
-                      </li> */}
                       <li>
                         <Link href="/shop/grid">All Products</Link>
                       </li>
@@ -156,23 +132,11 @@ const Footer = function () {
                   <h4 className="footer-title">Customer Care</h4>
                   <div className="footer-menu">
                     <ul>
-                      {/* <li>
-                        <Link href="/login">Login</Link>
-                      </li>
-                      <li>
-                        <Link href="/my-account">My account</Link>
-                      </li>
-                      <li>
-                        <Link href="/wishlist">Wish List</Link>
-                      </li>
-                      <li>
-                        <Link href="/order-tracking">Order tracking</Link>
-                      </li> */}
-                      {/* <li>
-                        <Link href="/faq">FAQ</Link>
-                      </li> */}
                       <li>
                         <Link href="/contact">Contact us</Link>
+                      </li>
+                      <li>
+                        <Link href="/privacy">Privacy Policy</Link>
                       </li>
                     </ul>
                   </div>
@@ -196,8 +160,6 @@ const Footer = function () {
                       </div>
                     </form>
                   </div>
-                  {/* <h5 className="mt-30">We Accept</h5>
-                  <img src="/img/icons/payment-4.png" alt="Payment Image" /> */}
                 </div>
               </Col>
             </Row>
@@ -214,21 +176,15 @@ const Footer = function () {
                   </p>
                 </div>
               </Col>
-              <Col xs={12} md={6} className="align-self-center">
+              {/* <Col xs={12} md={6} className="align-self-center">
                 <div className="ltn__copyright-menu text-end">
                   <ul>
                     <li>
-                      <Link href="#">Terms & Conditions</Link>
-                    </li>
-                    {/* <li>
-                      <Link href="#">Claim</Link>
-                    </li> */}
-                    <li>
-                      <Link href="#">Privacy & Policy</Link>
+                      <Link href="/privacy">Privacy & Policy</Link>
                     </li>
                   </ul>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
           </div>
         </div>

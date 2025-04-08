@@ -239,7 +239,7 @@ function HomePage(props) {
 
   return (
     <>
-     <Head>
+      <Head>
         <link rel="icon" href="/logo.png" type="image/x-icon" />
       </Head>
       <LayoutTwo topbar={true}>
@@ -258,7 +258,7 @@ function HomePage(props) {
         </div>
 
         {/* <!-- SLIDER AREA END --> */}
-        <CarDealerSearchForm navMenuClass="d-none" customClasses="" />
+        {/* <CarDealerSearchForm navMenuClass="d-none" customClasses="" /> */}
         {/* <!-- CAR DEALER FORM AREA END --> */}
 
 
@@ -349,7 +349,7 @@ function HomePage(props) {
         {/* <!-- VIDEO AREA END --> */}
 
         {/* <!-- TESTIMONIAL AREA START --> */}
-        <div className="ltn__testimonial-area ltn__testimonial-4 pt-115 pb-100 plr--9">
+        <div className="ltn__testimonial-area ltn__testimonial-4 pt-70 pb-100 plr--9">
           <Container fluid>
             <Row>
               <Col lg={12}>
@@ -374,8 +374,20 @@ function HomePage(props) {
         {/* <!-- TESTIMONIAL AREA END --> */}
 
         {/* <!-- BRAND LOGO AREA START --> */}
-        <div className="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-110 pb-110 plr--9">
+        <div className="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-70 pb-110 plr--9">
           <Container fluid>
+            <Row>
+              <Col lg={12}>
+                <TitleSection
+                  sectionClasses="text-center"
+                  headingClasses="section-subtitle-2"
+                  titleSectionData={{
+                    subTitle: "Our Trusted Partners",
+                    // title: "Clients Feedback",
+                  }}
+                />
+              </Col>
+            </Row>
             <Row>
               <Col xs={12}>
                 <BrandCarouselOne data={brand} />
