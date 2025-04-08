@@ -10,7 +10,8 @@ import {
   FaPaperPlane,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaPhoneAlt
+  FaPhoneAlt,
+  FaInstagram
 } from "react-icons/fa";
 
 const Footer = function () {
@@ -58,7 +59,7 @@ const Footer = function () {
                         </div>
                         <div className="footer-address-info">
                           <p>
-                            <Link href="mailto:example@example.com">
+                            <Link target='_blank' href="mailto:example@example.com">
                               example@example.com
                             </Link>
                           </p>
@@ -69,7 +70,7 @@ const Footer = function () {
                   <div className="ltn__social-media mt-20">
                     <ul>
                       <li>
-                        <Link href="#" title="Facebook">
+                        <Link target='_blank' href="https://www.facebook.com/share/1FDbZLdPnh" title="Facebook">
                           <FaFacebookF />
                         </Link>
                       </li>
@@ -79,8 +80,8 @@ const Footer = function () {
                         </Link>
                       </li>
                       <li>
-                        <Link href="#" title="Linkedin">
-                          <FaLinkedin />
+                        <Link href="https://www.instagram.com/bhuniveshindiapvt?igsh=MXA5dXdyMjhtOW50YQ==" title="Instagram">
+                          <FaInstagram />
                         </Link>
                       </li>
                       <li>

@@ -11,6 +11,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaInstagram
 } from "react-icons/fa";
 import Image from "next/image";
 import { Clock } from "lucide-react";
@@ -43,20 +44,20 @@ const Footer = function () {
                   </p>
                  
                   <div className="ltn__social-media mt-20">
-                    <ul>
+                  <ul>
                       <li>
-                        <Link href="#" title="Facebook">
+                        <Link target='_blank' href="https://www.facebook.com/share/1FDbZLdPnh" title="Facebook">
                           <FaFacebookF />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link target='_blank' href="https://www.instagram.com/bhuniveshindiapvt?igsh=MXA5dXdyMjhtOW50YQ==" title="Instagram">
+                          <FaInstagram />
                         </Link>
                       </li>
                       <li>
                         <Link href="#" title="Twitter">
                           <FaTwitter />
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="#" title="Linkedin">
-                          <FaLinkedin />
                         </Link>
                       </li>
                       <li>

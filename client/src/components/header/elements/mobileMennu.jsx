@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaInstagram,
   FaSearch,
+  FaYoutube
 } from "react-icons/fa";
 
 import {
@@ -97,28 +98,28 @@ const MobileMenu = function ({ offCanVastoggleBtn, closeSideBar }) {
             </ul>
           </div>
           <div className="ltn__social-media-2">
-            <ul>
-              <li>
-                <Link href="#">
-                  <FaFacebookF />
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <FaTwitter />
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <FaLinkedin />
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <FaInstagram />
-                </Link>
-              </li>
-            </ul>
+          <ul>
+                      <li>
+                        <Link target='_blank' href="https://www.facebook.com/share/1FDbZLdPnh" title="Facebook">
+                          <FaFacebookF />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link target='_blank' href="https://www.instagram.com/bhuniveshindiapvt?igsh=MXA5dXdyMjhtOW50YQ==" title="Instagram">
+                          <FaInstagram />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" title="Twitter">
+                          <FaTwitter />
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" title="Youtube">
+                          <FaYoutube />
+                        </Link>
+                      </li>
+                    </ul>
           </div>
         </div>
       </div>
