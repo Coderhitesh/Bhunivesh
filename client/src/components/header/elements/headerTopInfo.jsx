@@ -9,7 +9,7 @@ const HeaderTopInfo = function () {
           <li>
             <Link href="mailto:info@webmail.com">
               <FaEnvelope />
-              <i></i> info@realstate.com
+              <i></i>info@bhunivesh.in
             </Link>
           </li>
           {/* <li>

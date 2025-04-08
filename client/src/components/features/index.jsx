@@ -58,10 +58,10 @@ function Feature({ classes, headingClasses }) {
                 <div className="ltn__feature-info">
                   <h3>{item.title}</h3>
                   <p>{item.shortDescription}</p>
-                  <Link className="ltn__service-btn" href="#">
+                  {/* <Link className="ltn__service-btn" href="#">
                     {item.buttonText}
                     <i className="flaticon-right-arrow"></i>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </Col>

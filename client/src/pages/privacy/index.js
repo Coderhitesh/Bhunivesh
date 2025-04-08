@@ -25,9 +25,9 @@ const index = () => {
               <div className="card-body p-4 p-lg-5">
                 <p className="mb-4">
                   This Privacy Policy explains how we collect, use, and disclose information through our website, 
-                  Bhunivesh at propsavvyrealtors.com, which provides comprehensive real estate consultation 
+                  Bhunivesh at www.bhunivesh.in, which provides comprehensive real estate consultation 
                   and services in Gurgaon. If you have any questions or concerns about our policy or practices regarding 
-                  your personal information, please contact us at propsavvyrealtors@gmail.com.
+                  your personal information, please contact us at info@bhunivesh.in.
                 </p>
 
                 {/* Section 1 */}
@@ -103,10 +103,9 @@ const index = () => {
                   <h2 className="h4 mb-4">Contact Us</h2>
                   <address className="mb-0">
                     <strong>Bhunivesh</strong><br />
-                    Unit No. 335, Tower A, Spaze i-Tech Park, Sector 49,<br />
-                    Gurgaon, 122001 Haryana<br />
+                    Unit No 350, Tower-A Spaze I-Tech Park Sec 49, Sohna Road, Gurugram 122018<br />
                     <br />
-                    <strong>Email:</strong> <a href="mailto:propsavvyrealtors@gmail.com">propsavvyrealtors@gmail.com</a>
+                    <strong>Email:</strong> <a href="mailto:info@bhunivesh.in">info@bhunivesh.in</a>
                   </address>
                 </div>
               </div>

@@ -8,9 +8,9 @@ const TestimonialCarouselItem = ({data}) => {
             {data.description}
           </p>
           <div className="ltn__testimoni-info-inner">
-            <div className="ltn__testimoni-img">
+            {/* <div className="ltn__testimoni-img">
               <img src={`/img/testimonial/${data.img}`} alt={`${data.name}`} />
-            </div>
+            </div> */}
             <div className="ltn__testimoni-name-designation">
               <h5> {data.name}</h5>
               <label>{data.type}</label>

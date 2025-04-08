@@ -10,7 +10,7 @@ import { getProducts, productSlug } from "@/lib/product";
 import TitleSection from "@/components/titleSection";
 import ShopBreadCrumb from "@/components/breadCrumbs/shop";
 import TestimonialCarouselItem from "@/components/testimonialCarousel";
-import testimonialData from "@/data/testimonial";
+// import testimonialData from "@/data/testimonial";
 import CallToAction from "@/components/callToAction";
 import AboutUsStyleOne from "@/components/aboutUs/aboutUsStyleOne";
 import Feature from "@/components/features";
@@ -23,12 +23,39 @@ function AboutUs() {
 
   const [agents, setAgents] = useState([]);
 
+  const testimonialData = [
+    {
+      img: "client1.jpg",
+      description: "Bhunivesh made buying my dream home a reality! Their team guided me through every step, making the entire process smooth and stress-free.",
+      name: "Rahul Mehta",
+      type: "Homebuyer",
+    },
+    {
+      img: "client2.jpg",
+      description: "As an investor, I needed a reliable partner to find the best properties. Bhunivesh provided excellent insights and helped me secure great deals!",
+      name: "Amit Sharma",
+      type: "Property Investor",
+    },
+    {
+      img: "client3.jpg",
+      description: "I was looking for a commercial property for my business, and Bhunivesh exceeded my expectations. Professional, efficient, and trustworthy!",
+      name: "Neha Kapoor",
+      type: "Business Owner",
+    },
+    {
+      img: "client4.jpg",
+      description: "Selling my property with Bhunivesh was a breeze. Their expert marketing strategies ensured I got the best price in no time!",
+      name: "Ramesh Verma",
+      type: "Property Seller",
+    },
+  ]
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_teams');
         const uniqueAgents = Array.from(new Map(data.data.map(item => [item._id, item])).values());
-        console.log("uniqueAgents",uniqueAgents)
+        console.log("uniqueAgents", uniqueAgents)
         setAgents(uniqueAgents.reverse());
       } catch (error) {
         console.log('Internal server error', error);
@@ -61,7 +88,7 @@ function AboutUs() {
       },
     ],
   };
-  
+
 
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
@@ -123,7 +150,7 @@ function AboutUs() {
 
         <AboutUsStyleOne sectionSpace="pb-90" />
 
-        <Feature
+        {/* <Feature
           classes="section-bg-1"
           servicebtn={true}
           iconTag={false}
@@ -133,7 +160,7 @@ function AboutUs() {
             subTitle: "Our Services",
             title: "Our Main Focus",
           }}
-        />
+        /> */}
 
 
 
@@ -142,7 +169,7 @@ function AboutUs() {
           <Container>
             <Row className="mb-4">
               <Col>
-                <h3 className="text-center">Meet Our Owners</h3>
+                <h3 className="text-center">Meet Our Team</h3>
               </Col>
             </Row>
 

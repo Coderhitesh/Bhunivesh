@@ -52,7 +52,7 @@ const Contact = () => {
                 </div>
                 <h3>Email Address</h3>
                 <p>
-                  info@bhunivesh.com
+                  info@bhunivesh.in
                 </p>
               </div>
             </div>
@@ -126,32 +126,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    {/* Service Type Dropdown */}
-                    {/* <div className="col-md-6">
-                      <div className="input-item input-item-email ltn__custom-icon">
-                        <Form.Select
-                          className="nice-select"
-                          name="serviceType"
-                          value={formData.serviceType || ""}
-                          onChange={handleChange}
-                          required
-                        >
-                          <option value="">Select Service Type</option>
-                          <option value="Property Management">Property Management</option>
-                          <option value="Mortgage Service">Mortgage Service</option>
-                          <option value="Consulting Service">Consulting Service</option>
-                          <option value="Home Buying">Home Buying</option>
-                          <option value="Home Selling">Home Selling</option>
-                          <option value="Escrow Services">Escrow Services</option>
-                        </Form.Select>
-                        <span className="inline-icon">
-                          <FaArrowDown />
-                        </span>
-                      </div>
-                    </div> */}
-
                     {/* Phone Field */}
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                       <div className="input-item input-item-phone ltn__custom-icon">
                         <input
                           type="text"

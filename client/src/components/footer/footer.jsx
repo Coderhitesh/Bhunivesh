@@ -13,6 +13,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import Image from "next/image";
+import { Clock } from "lucide-react";
 
 const Footer = function () {
   return (
@@ -40,40 +41,7 @@ const Footer = function () {
                   <p>
                     At Bhunivesh, we help you find your dream property with ease..
                   </p>
-                  <div className="footer-address">
-                    <ul>
-                      <li>
-                        <div className="footer-address-icon">
-                          <FaMapMarkerAlt />
-                        </div>
-                        <div className="footer-address-info">
-                          <p>Unit No 350, Tower-A Spaze I-Tech Park Sec 49, Sohna Road, Gurugram 122018</p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="footer-address-icon">
-                          <FaPhoneAlt />
-                        </div>
-                        <div className="footer-address-info">
-                          <p>
-                            <Link href="tel:+91 9090267878">+91 9090267878</Link>
-                          </p>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="footer-address-icon">
-                          <FaEnvelope />
-                        </div>
-                        <div className="footer-address-info">
-                          <p>
-                            <Link href="mailto:info@bhunivesh.com">
-                              info@bhunivesh.com
-                            </Link>
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                 
                   <div className="ltn__social-media mt-20">
                     <ul>
                       <li>
@@ -100,40 +68,37 @@ const Footer = function () {
                   </div>
                 </div>
               </Col>
-              <Col xs={12} sm={6} xl={2}>
+              <Col xs={12} sm={6} xl={3}>
                 <div className="footer-widget footer-menu-widget clearfix">
-                  <h4 className="footer-title">Company</h4>
+                  <h4 className="footer-title">Quick links</h4>
                   <div className="footer-menu">
                     <ul>
                       <li>
-                        <Link href="/about">About</Link>
+                        <Link href="/">Home</Link>
+                      </li>
+                      <li>
+                        <Link href="/shop/grid">All Properties</Link>
+                      </li>
+                      <li>
+                        <Link href="/about">About Us</Link>
+                      </li>
+                      <li>
+                        <Link href="/contact">Contact us</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+              <Col xs={12} sm={6} xl={3}>
+                <div className="footer-widget footer-menu-widget clearfix">
+                  <h4 className="footer-title">Our Services</h4>
+                  <div className="footer-menu">
+                    <ul>
+                      <li>
+                        <Link href="/shop/grid">All Properties</Link>
                       </li>
                       <li>
                         <Link href="/blog/grid">Blog</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Col>
-              <Col xs={12} sm={6} xl={2}>
-                <div className="footer-widget footer-menu-widget clearfix">
-                  <h4 className="footer-title">Services</h4>
-                  <div className="footer-menu">
-                    <ul>
-                      <li>
-                        <Link href="/shop/grid">All Products</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Col>
-              <Col xs={12} sm={6} xl={2}>
-                <div className="footer-widget footer-menu-widget clearfix">
-                  <h4 className="footer-title">Customer Care</h4>
-                  <div className="footer-menu">
-                    <ul>
-                      <li>
-                        <Link href="/contact">Contact us</Link>
                       </li>
                       <li>
                         <Link href="/privacy">Privacy Policy</Link>
@@ -143,22 +108,51 @@ const Footer = function () {
                 </div>
               </Col>
               <Col xs={12} sm={6} xl={3}>
-                <div className="footer-widget footer-newsletter-widget">
-                  <h4 className="footer-title">Newsletter</h4>
-                  <p>
-                    Subscribe to our weekly Newsletter and receive updates via
-                    email.
-                  </p>
-                  <div className="footer-newsletter">
-                    <form action="#">
-                      <input type="email" name="email" placeholder="Email*" />
-                      <div className="btn-wrapper">
-                        <button className="theme-btn-1 btn" type="submit">
-                          {" "}
-                          <FaPaperPlane />
-                        </button>
-                      </div>
-                    </form>
+                <div className="footer-widget footer-menu-widget clearfix">
+                  <h4 className="footer-title">Contact Us</h4>
+                  <div className="footer-address">
+                    <ul>
+                      <li>
+                        <div className="footer-address-icon">
+                          <FaMapMarkerAlt />
+                        </div>
+                        <div className="footer-address-info">
+                          <p>Unit No 350, Tower-A Spaze I-Tech Park Sec 49, Sohna Road, Gurugram 122018</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="footer-address-icon">
+                          <FaPhoneAlt />
+                        </div>
+                        <div className="footer-address-info">
+                          <p>
+                            <Link href="tel:+91 9090267878">+91 9090267878</Link>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="footer-address-icon">
+                          <FaEnvelope />
+                        </div>
+                        <div className="footer-address-info">
+                          <p>
+                            <Link href="mailto:info@bhunivesh.in">
+                              info@bhunivesh.in
+                            </Link>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="footer-address-icon">
+                          <Clock />
+                        </div>
+                        <div className="footer-address-info">
+                          <p>
+                            <a>Mon - Sun: 10:00 AM - 7:00 PM</a>
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </Col>
@@ -176,15 +170,6 @@ const Footer = function () {
                   </p>
                 </div>
               </Col>
-              {/* <Col xs={12} md={6} className="align-self-center">
-                <div className="ltn__copyright-menu text-end">
-                  <ul>
-                    <li>
-                      <Link href="/privacy">Privacy & Policy</Link>
-                    </li>
-                  </ul>
-                </div>
-              </Col> */}
             </Row>
           </div>
         </div>

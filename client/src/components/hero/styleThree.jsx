@@ -109,10 +109,10 @@ function HeroSectionStyleThree({ data }) {
                             </div> */}
                             <div className="btn-wrapper animated">
                               <Link
-                                href="/about"
+                                href="/shop/grid"
                                 className="theme-btn-1 btn btn-effect-1"
                               >
-                                About Us
+                                Explore Properties
                               </Link>
                             </div>
                           </div>

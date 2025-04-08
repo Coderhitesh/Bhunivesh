@@ -80,13 +80,13 @@ const MobileMenu = function ({ offCanVastoggleBtn, closeSideBar }) {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/shop/grid">Property</Link>
+                <Link href="/shop/grid">Properties</Link>
               </li>
               <li>
                 <Link href="/blog/grid">Blogs</Link>
+              </li>
+              <li>
+                <Link href="/about">About Us</Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>
