@@ -28,7 +28,7 @@ function ShopGrid() {
 
   const fetchLocation = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8765/api/v1/get_locations');
+      const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_locations');
       setLocation(data.data);
     } catch (error) {
       console.log("Internal server error", error);
@@ -37,7 +37,7 @@ function ShopGrid() {
 
   const fetchPropertyType = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8765/api/v1/get_propertyTypes');
+      const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_propertyTypes');
       setPropertyType(data.data);
     } catch (error) {
       console.log("Internal server error", error);
@@ -47,7 +47,7 @@ function ShopGrid() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get("http://localhost:8765/api/v1/get_properties");
+        const response = await axios.get("https://www.api.test.propsavvyrealtors.com/api/v1/get_properties");
         setProperties(response.data.data);
         setFilteredProperties(response.data.data);
       } catch (error) {

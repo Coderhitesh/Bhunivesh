@@ -23,7 +23,7 @@ const Contact = () => {
     e.preventDefault();
     // console.log(formData);
     try {
-      const res = await axios.post('http://localhost:8765/api/v1/create_inquery', formData)
+      const res = await axios.post('https://www.api.test.propsavvyrealtors.com/api/v1/create_inquery', formData)
       // alert('success')
       toast.success(res.data.message)
     } catch (error) {

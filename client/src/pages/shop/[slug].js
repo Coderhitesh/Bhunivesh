@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   try {
     const { slug } = params; // Get slug from server params
 
-    const response = await axios.get(`http://localhost:8765/api/v1/get_property_slug/${slug}`);
+    const response = await axios.get(`https://www.api.test.propsavvyrealtors.com/api/v1/get_property_slug/${slug}`);
 
     if (!response.data || !response.data.data) {
       throw new Error("Invalid response structure");
@@ -55,7 +55,7 @@ const ProductDetails = () => {
   useEffect(() => {
     if (slug) {
       axios
-        .get(`http://localhost:8765/api/v1/get_property_slug/${slug}`)
+        .get(`https://www.api.test.propsavvyrealtors.com/api/v1/get_property_slug/${slug}`)
         .then((response) => {
           setProduct(response.data.data);
           setLoading(false);

@@ -36,7 +36,7 @@ function BlogGrid() {
   useEffect(()=>{
     const fetchdata = async () => {
       try {
-        const {data} = await axios.get('http://localhost:8765/api/v1/get_blogs')
+        const {data} = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_blogs')
         setAllBlog(data.data)
         setCurrentItems(data.data)
       } catch (error) {

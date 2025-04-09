@@ -115,7 +115,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8765/api/v1/get_properties");
+        const { data } = await axios.get("https://www.api.test.propsavvyrealtors.com/api/v1/get_properties");
         setAllProperties(data.data || []);
       } catch (error) {
         console.error("Error fetching properties", error);
@@ -204,7 +204,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8765/api/v1/get_blogs");
+        const { data } = await axios.get("https://www.api.test.propsavvyrealtors.com/api/v1/get_blogs");
         setBlogs(data.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);

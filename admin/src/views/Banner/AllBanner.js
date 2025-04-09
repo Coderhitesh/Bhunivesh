@@ -23,7 +23,7 @@ function AllHero() {
     const handleFetchHeroes = async () => {
         setLoading(true);
         try {
-            const { data } = await axios.get('http://localhost:8765/api/v1/get_heroes');
+            const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_heroes');
             setHeroes(data.data);
         } catch (error) {
             console.log('Error fetching heroes:', error);
@@ -36,7 +36,7 @@ function AllHero() {
     const handleUpdateStatus = async (id, currentStatus) => {
         try {
             const updatedStatus = !currentStatus;
-            await axios.put(`http://localhost:8765/api/v1/update_hero_status/${id}`, {
+            await axios.put(`https://www.api.test.propsavvyrealtors.com/api/v1/update_hero_status/${id}`, {
                 status: updatedStatus,
             });
 
@@ -56,7 +56,7 @@ function AllHero() {
     const handleDeleteHero = async (id) => {
         try {
             setLoading(true);
-            await axios.delete(`http://localhost:8765/api/v1/delete_hero/${id}`);
+            await axios.delete(`https://www.api.test.propsavvyrealtors.com/api/v1/delete_hero/${id}`);
             setHeroes((prevHeroes) => prevHeroes.filter((hero) => hero._id !== id));
             toast.success('Hero deleted successfully');
         } catch (error) {

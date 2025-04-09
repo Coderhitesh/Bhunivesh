@@ -36,7 +36,7 @@ const Login = () => {
     setLoading(true);
     try {
       console.log("object", formData);
-      const res = await axios.post('http://localhost:8765/admin-login', formData);
+      const res = await axios.post('https://www.api.test.propsavvyrealtors.com/admin-login', formData);
       // console.log('Response:', res.data);
 
       // const { token, user } = res.data;

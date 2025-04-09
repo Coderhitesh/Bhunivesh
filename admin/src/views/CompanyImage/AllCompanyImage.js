@@ -25,7 +25,7 @@ const AllCompanyImage = () => {
     const fetchCompanyImages = async () => {
         setLoading(true);
         try {
-            const { data } = await axios.get('http://localhost:8765/api/v1/get_all_company_images');
+            const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_all_company_images');
             setCompanyImages(data.data || []);
         } catch (error) {
             console.error('Error fetching images:', error);
@@ -38,7 +38,7 @@ const AllCompanyImage = () => {
     const handleDeleteImage = async (id) => {
         setLoading(true);
         try {
-            await axios.delete(`http://localhost:8765/api/v1/delete_company_image/${id}`);
+            await axios.delete(`https://www.api.test.propsavvyrealtors.com/api/v1/delete_company_image/${id}`);
             setCompanyImages((prevImages) => prevImages.filter((img) => img._id !== id));
             toast.success('Company image deleted successfully!');
         } catch (error) {
