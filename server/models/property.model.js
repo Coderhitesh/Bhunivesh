@@ -20,7 +20,7 @@ const propertySchema = new mongoose.Schema({
         required: true
     },
     startingPrice: {
-        type: Number,
+        type: String,
         required: true
     },
     description: {

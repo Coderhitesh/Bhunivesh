@@ -28,7 +28,7 @@ const AllInquiry = () => {
     const fetchPropertyInquiries = async () => {
         setLoading(true);
         try {
-            const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_inqueries');
+            const { data } = await axios.get('http://localhost:8765/api/v1/get_inqueries');
             const allData = data.data;
             setInquiries(allData.reverse()); // Assuming data is returned in the `data` field
         } catch (error) {
@@ -47,7 +47,7 @@ const AllInquiry = () => {
     const handleDeleteInquiry = async (id) => {
         try {
             setLoading(true);
-            await axios.delete(`https://www.api.test.propsavvyrealtors.com/api/v1/delete_property_inquery/${id}`);
+            await axios.delete(`http://localhost:8765/api/v1/delete_property_inquery/${id}`);
             setInquiries((prev) => prev.filter((inquiry) => inquiry._id !== id));
             toast.success('Inquiry deleted successfully');
         } catch (error) {

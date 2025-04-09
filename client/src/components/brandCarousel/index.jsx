@@ -11,7 +11,7 @@ const BrandCarouselOne = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const res = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_all_company_images');
+        const res = await axios.get('http://localhost:8765/api/v1/get_all_company_images');
         setBrands(res.data.data.reverse());
       } catch (error) {
         console.error('Failed to fetch images:', error);

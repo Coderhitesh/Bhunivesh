@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
 
     const { slug } = params;
     const response = await axios.get(
-      `https://www.api.test.propsavvyrealtors.com/api/v1/get_property_slug/${slug}`
+      `http://localhost:8765/api/v1/get_property_slug/${slug}`
     );
 
     if (!response.data || !response.data.data) {

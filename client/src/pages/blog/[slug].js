@@ -7,7 +7,7 @@ import SingleBlog from "@/components/Custom/SingleBlog";
 export async function generateMetadata({ params }) {
   try {
     const { slug } = params; // Use params instead of useRouter()
-    const response = await fetch(`https://www.api.test.propsavvyrealtors.com/api/v1/get_blog_by_slug/${slug}`);
+    const response = await fetch(`http://localhost:8765/api/v1/get_blog_by_slug/${slug}`);
     const data = await response.json();
 
     if (!data || !data.data) {
@@ -56,7 +56,7 @@ const BlogDetails = () => {
   useEffect(() => {
     if (slug) {
       axios
-        .get(`https://www.api.test.propsavvyrealtors.com/api/v1/get_blog_by_slug/${slug}`)
+        .get(`http://localhost:8765/api/v1/get_blog_by_slug/${slug}`)
         .then((response) => {
           setBlog(response.data.data);
           setLoading(false);

@@ -53,7 +53,7 @@ function AboutUs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_teams');
+        const { data } = await axios.get('http://localhost:8765/api/v1/get_teams');
         const uniqueAgents = Array.from(new Map(data.data.map(item => [item._id, item])).values());
         console.log("uniqueAgents", uniqueAgents)
         setAgents(uniqueAgents.reverse());

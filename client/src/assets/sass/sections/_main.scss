@@ -1195,21 +1195,21 @@
     }
   }
 
-  &.active,
-  &:hover {
-    box-shadow: var(--ltn__box-shadow-1);
+  // &.active,
+  // &:hover {
+  //   box-shadow: var(--ltn__box-shadow-1);
 
-    &::before {
-      width: 100%;
-      opacity: 1;
-      visibility: visible;
-    }
+  //   &::before {
+  //     width: 100%;
+  //     opacity: 1;
+  //     visibility: visible;
+  //   }
 
-    .ltn__feature-info .ltn__service-btn,
-    .ltn__feature-icon {
-      color: var(--ltn__secondary-color);
-    }
-  }
+  //   .ltn__feature-info .ltn__service-btn,
+  //   .ltn__feature-icon {
+  //     color: var(--ltn__secondary-color);
+  //   }
+  // }
 }
 
 /* feature-item-7 */

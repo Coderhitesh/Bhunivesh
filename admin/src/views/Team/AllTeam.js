@@ -25,7 +25,7 @@ const AllTeam = () => {
         setLoading(true);
         try {
 
-            const { data } = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_teams');
+            const { data } = await axios.get('http://localhost:8765/api/v1/get_teams');
             setTeamMembers(data.data || []);
         } catch (error) {
             console.error('Error fetching team members:', error);
@@ -38,7 +38,7 @@ const AllTeam = () => {
     const handleDeleteMember = async (id) => {
         setLoading(true);
         try {
-            await axios.delete(`https://www.api.test.propsavvyrealtors.com/api/v1/delete_team/${id}`);
+            await axios.delete(`http://localhost:8765/api/v1/delete_team/${id}`);
             setTeamMembers((prevMembers) => prevMembers.filter((member) => member._id !== id));
             toast.success('Team member deleted successfully!');
         } catch (error) {

@@ -14,7 +14,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://www.api.test.propsavvyrealtors.com/api/v1/create_inquery', formData);
+      await axios.post('http://localhost:8765/api/v1/create_inquery', formData);
       toast.success('Inquiry sent successfully!');
       setFormData({ name: '', email: '', phone: '', message: '' });
       onClose();

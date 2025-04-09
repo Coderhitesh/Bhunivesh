@@ -22,6 +22,7 @@ import { ArrowRight, Calendar, ChevronLeft, ChevronRight, Clock } from "lucide-r
 import { useRouter } from "next/navigation";
 import ContactPopup from "@/components/Custom/ContactPopup";
 import Head from "next/head";
+import CallToActionButtons from "@/components/CallToActionButtons/CallToActionButtons";
 
 function HomePage(props) {
   const [isOpen, setOpen] = useState(false);
@@ -114,7 +115,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const { data } = await axios.get("https://www.api.test.propsavvyrealtors.com/api/v1/get_properties");
+        const { data } = await axios.get("http://localhost:8765/api/v1/get_properties");
         setAllProperties(data.data || []);
       } catch (error) {
         console.error("Error fetching properties", error);
@@ -133,13 +134,21 @@ function HomePage(props) {
     variableWidth: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1424,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
           infinite: false,
           dots: true
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
         }
       },
       {
@@ -195,7 +204,7 @@ function HomePage(props) {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const { data } = await axios.get("https://www.api.test.propsavvyrealtors.com/api/v1/get_blogs");
+        const { data } = await axios.get("http://localhost:8765/api/v1/get_blogs");
         setBlogs(data.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -278,7 +287,7 @@ function HomePage(props) {
         {/* <!-- FEATURE AREA END -->
 
     <!-- SEARCH BY PLACE AREA START (testimonial-7) --> */}
-        <div className="min-vh-100 bg-light py-5">
+        <div className=" bg-light py-5">
           <div className="container">
             <div className="text-center mb-5">
               <h2 className="display-4 fw-bold mb-2">Featured Listings</h2>
@@ -499,7 +508,7 @@ function HomePage(props) {
         </div>
         {/* <!-- CALL TO ACTION END --> */}
 
-        <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 1050 }}>
+        <div className="position-fixed end-0 p-3" style={{ zIndex: 1050, bottom:'2%' }}>
           <button
             className="btn btn-primary shadow-lg rounded-pill px-4 py-2 d-flex align-items-center gap-2"
             style={{
@@ -513,6 +522,8 @@ function HomePage(props) {
             <i className="bi bi-chat-dots-fill"></i> Inquiry
           </button>
         </div>
+
+        <CallToActionButtons />
 
       </LayoutTwo>
     </>

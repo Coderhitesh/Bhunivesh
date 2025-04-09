@@ -11,7 +11,7 @@ function HeroSectionStyleThree({ data }) {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const res = await axios.get('https://www.api.test.propsavvyrealtors.com/api/v1/get_heroes')
+        const res = await axios.get('http://localhost:8765/api/v1/get_heroes')
         // console.log("res.data.data",res.data.data)
         setBanner(res.data.data)
       } catch (error) {

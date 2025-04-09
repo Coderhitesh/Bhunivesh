@@ -50,9 +50,8 @@ function Feature({ classes, headingClasses }) {
           {data.map((item, key) => (
             <Col key={key} xs={12} sm={6} lg={4}>
               <div
-                className={`ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1 ${
-                  item.active ? "active" : ""
-                }`}
+                // className={`ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1 ${item.active ? "active" : ""}`}
+                className={`ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1`}
               >
                 <div className="ltn__feature-icon">{item.icon}</div>
                 <div className="ltn__feature-info">
